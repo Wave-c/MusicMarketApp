@@ -1,0 +1,33 @@
+﻿<Application x:Class="MusicMarketApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MusicMarketApp"
+              StartupUri="Views\LoginWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="#5C5C5C"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style TargetType="DataGrid">
+            <Setter Property="Background" Value="#5C5C5C"/>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Background" Value="Black"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#464646"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Application.Resources>
+</Application>

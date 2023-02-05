@@ -1,0 +1,65 @@
+﻿<Window x:Class="MusicMarketKursach.Views.AddEditMusicRecordWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicMarketKursach.Views"
+        xmlns:viewModel="clr-namespace:MusicMarketKursach.ViewModels"
+        mc:Ignorable="d"
+        Title="AddEditMusicRecordWindow" Height="450" Width="400" MinHeight="450" MinWidth="400"
+        d:DataContext="{d:DesignInstance Type=viewModel:AddEditMusicRecordViewModel}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="20 0 0 0" Orientation="Horizontal" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <Label MinWidth="100">название пластинки</Label>
+            <TextBox MinWidth="200" Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
+        </StackPanel>
+        <StackPanel Margin="20 0 0 0" Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <Label MinWidth="100">название коллектива</Label>
+            <TextBox MinWidth="200" Text="{Binding GroupName, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <StackPanel Margin="20 0 0 0" Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <Label MinWidth="100">название издателя</Label>
+            <TextBox MinWidth="200" Text="{Binding PublisherName, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <StackPanel Margin="20 0 0 0" Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <Label MinWidth="100">количество треков</Label>
+            <TextBox MinWidth="200" Text="{Binding NumberTracks, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <StackPanel Margin="20 0 0 0" Orientation="Horizontal" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <Label MinWidth="100">жанр</Label>
+            <TextBox MinWidth="200" Text="{Binding Genre, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <StackPanel Margin="20 0 0 0" Orientation="Horizontal" Grid.Row="5" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <Label MinWidth="100">год издания</Label>
+            <TextBox MinWidth="200" Text="{Binding YearPublication, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <StackPanel Margin="20 0 0 0" Orientation="Horizontal" Grid.Row="6" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <Label MinWidth="100">себестоимость</Label>
+            <TextBox MinWidth="200" Text="{Binding CostPrice, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <StackPanel Margin="20 0 0 0" Orientation="Horizontal" Grid.Row="7" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <Label MinWidth="100">цена для продажи</Label>
+            <TextBox MinWidth="200" Text="{Binding PriceForSale, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        
+
+        <Button Grid.Row="8" Width="100" Height="40" Command="{Binding SaveCommand}">Сохранить</Button>
+        <Button Grid.Row="8" Grid.Column="1" Width="100" Height="40" Command="{Binding CancelCommand}">Отмена</Button>
+    </Grid>
+</Window>

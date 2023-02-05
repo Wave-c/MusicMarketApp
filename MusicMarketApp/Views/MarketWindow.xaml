@@ -1,0 +1,40 @@
+﻿<Window x:Class="MusicMarketKursach.Views.MarketWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicMarketKursach.Views"
+        xmlns:viewModel="clr-namespace:MusicMarketKursach.ViewModels"
+        mc:Ignorable="d"
+        Title="MarketWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="{Binding ButtonsText[0]}" Command="{Binding Button1Click}"/>
+            <Button Grid.Column="1" Content="{Binding ButtonsText[1]}" Command="{Binding Button2Click}"/>
+            <Button Grid.Column="2" Content="{Binding ButtonsText[2]}" Command="{Binding Button3Click}"/>
+        </Grid>
+        <DataGrid AutoGenerateColumns="False" Grid.Row="1" IsReadOnly="True" 
+                  SelectedItem="{Binding SelectedMusicRecord, 
+            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                  ItemsSource="{Binding MusicRecords}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Path=Title}" Width="1*"/>
+                <DataGridTextColumn Header="Назвиние группы" Binding="{Binding Path=GroupName}" Width="1*"/>
+                <DataGridTextColumn Header="Название издателя" Binding="{Binding Path=PublisherName}" Width="1*"/>
+                <DataGridTextColumn Header="Количество треков" Binding="{Binding Path=NumberTracks}" Width="1*"/>
+                <DataGridTextColumn Header="Жанр" Binding="{Binding Path=Genre}" Width="1*"/>
+                <DataGridTextColumn Header="Год издания" Binding="{Binding Path=YearPublication}" Width="1*"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Path=PriceForSale}" Width="1*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
